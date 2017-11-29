@@ -8,7 +8,7 @@ Collection of a few interesting animations, particularly Android's Animated Vect
 
 ## Glimpse
 
-![Chrome](https://imgur.com/7RHHvJg.gif)
+![Chrome](https://imgur.com/o6iSFz1.gif)
 
 ## Resources
 - [Online Design Tool : ShapeShifter](https://shapeshifter.design/)
