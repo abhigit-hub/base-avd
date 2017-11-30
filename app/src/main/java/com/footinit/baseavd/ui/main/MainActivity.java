@@ -35,6 +35,12 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @BindView(R.id.iv_chrome)
     AppCompatImageView ivChrome;
 
+    @BindView(R.id.iv_tea)
+    AppCompatImageView ivTea;
+
+    @BindView(R.id.iv_path)
+    AppCompatImageView ivPath;
+
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -65,13 +71,46 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         setUpAnimation1();
     }
 
+    @OnClick(R.id.iv_tea)
+    void onTeaClicked() {
+        setUpAnimation2();
+    }
+
+    @OnClick(R.id.iv_path)
+    void onPathClicked() {
+        setUpAnimation3();
+    }
 
     private void setUpAnimation() {
         setUpAnimation1();
+        setUpAnimation2();
+        setUpAnimation3();
     }
 
     private void setUpAnimation1() {
         Drawable drawable = ivChrome.getDrawable();
+
+        if (drawable != null && drawable instanceof Animatable)
+            ((Animatable) drawable).start();
+        else if (drawable instanceof AnimatedVectorDrawableCompat)
+            ((AnimatedVectorDrawableCompat) drawable).start();
+        else if (drawable instanceof AnimatedVectorDrawable)
+            ((AnimatedVectorDrawable) drawable).start();
+    }
+
+    private void setUpAnimation2() {
+        Drawable drawable = ivTea.getDrawable();
+
+        if (drawable != null && drawable instanceof Animatable)
+            ((Animatable) drawable).start();
+        else if (drawable instanceof AnimatedVectorDrawableCompat)
+            ((AnimatedVectorDrawableCompat) drawable).start();
+        else if (drawable instanceof AnimatedVectorDrawable)
+            ((AnimatedVectorDrawable) drawable).start();
+    }
+
+    private void setUpAnimation3() {
+        Drawable drawable = ivPath.getDrawable();
 
         if (drawable != null && drawable instanceof Animatable)
             ((Animatable) drawable).start();

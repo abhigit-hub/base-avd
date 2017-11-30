@@ -23,6 +23,22 @@
                 android:padding="20dp"
                 android:contentDescription="@string/chrome"
                 app:srcCompat="@drawable/avd_browser_enhanced" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_tea"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:padding="20dp"
+                android:contentDescription="@string/tea"
+                app:srcCompat="@drawable/avd_tea"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_path"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:padding="20dp"
+                android:contentDescription="@string/path"
+                app:srcCompat="@drawable/avd_path"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </RelativeLayout>

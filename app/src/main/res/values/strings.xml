@@ -2,4 +2,6 @@
     <string name="app_name">Base AVD</string>
     <string name="chrome">Chrome</string>
     <string name="some_error">some_error</string>
+    <string name="tea">tea</string>
+    <string name="path">path</string>
 </resources>
