@@ -41,10 +41,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @BindView(R.id.iv_path)
     AppCompatImageView ivPath;
 
-
+/*
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
-    }
+    }*/
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -98,7 +98,7 @@ public abstract class BaseActivity extends AppCompatActivity
 
     @Override
     public boolean isNetworkConnected() {
-        if (NetworkUtils.isNetworkConnected(getApplicationContext()))
+        if (NetworkUtils.INSTANCE.isNetworkConnected(getApplicationContext()))
             return true;
         else {
             onError("No Internet");

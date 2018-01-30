@@ -48,7 +48,7 @@ public class ApplicationModule {
     @Singleton
     CalligraphyConfig providesCalligraphyConfig() {
         return new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/fonts.source-sans-pro/SourceSansPro-Light.ttf")
+                .setDefaultFontPath("fonts/fonts.fonts.source-sans-pro/SourceSansPro-Light.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build();
     }

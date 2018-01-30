@@ -1,7 +1,5 @@
 package com.footinit.baseavd.di.component;
 
-import android.app.Application;
-
 import com.footinit.baseavd.di.PerActivity;
 import com.footinit.baseavd.di.module.ActivityModule;
 import com.footinit.baseavd.ui.main.MainActivity;
