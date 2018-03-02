@@ -5,16 +5,19 @@ import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.footinit.baseavd.R;
 import com.footinit.baseavd.ui.base.BaseActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -31,16 +34,15 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Inject
     MainMvpPresenter<MainMvpView> presenter;
 
+    @Inject
+    MainListAdapter adapter;
 
-    @BindView(R.id.iv_chrome)
-    AppCompatImageView ivChrome;
+    @Inject
+    LinearLayoutManager layoutManager;
 
-    @BindView(R.id.iv_tea)
-    AppCompatImageView ivTea;
 
-    @BindView(R.id.iv_path)
-    AppCompatImageView ivPath;
-
+    @BindView(R.id.avd_rv)
+    RecyclerView avdRV;
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -62,62 +64,22 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     protected void setUp() {
-        setUpAnimation();
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        avdRV.setLayoutManager(layoutManager);
+        avdRV.setItemAnimator(new DefaultItemAnimator());
+        avdRV.setAdapter(adapter);
+        adapter.addItems(prepareAVDList());
     }
 
+    private List<Drawable> prepareAVDList() {
+        List<Drawable> list = new ArrayList<Drawable>();
 
-    @OnClick(R.id.iv_chrome)
-    void onChromeClicked() {
-        setUpAnimation1();
-    }
+        list.add(getResources().getDrawable(R.drawable.avd_browser_enhanced));
+        list.add(getResources().getDrawable(R.drawable.avd_briefcase));
+        list.add(getResources().getDrawable(R.drawable.avd_path));
+        list.add(getResources().getDrawable(R.drawable.avd_tea));
 
-    @OnClick(R.id.iv_tea)
-    void onTeaClicked() {
-        setUpAnimation2();
-    }
-
-    @OnClick(R.id.iv_path)
-    void onPathClicked() {
-        setUpAnimation3();
-    }
-
-    private void setUpAnimation() {
-        setUpAnimation1();
-        setUpAnimation2();
-        setUpAnimation3();
-    }
-
-    private void setUpAnimation1() {
-        Drawable drawable = ivChrome.getDrawable();
-
-        if (drawable != null && drawable instanceof Animatable)
-            ((Animatable) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawableCompat)
-            ((AnimatedVectorDrawableCompat) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawable)
-            ((AnimatedVectorDrawable) drawable).start();
-    }
-
-    private void setUpAnimation2() {
-        Drawable drawable = ivTea.getDrawable();
-
-        if (drawable != null && drawable instanceof Animatable)
-            ((Animatable) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawableCompat)
-            ((AnimatedVectorDrawableCompat) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawable)
-            ((AnimatedVectorDrawable) drawable).start();
-    }
-
-    private void setUpAnimation3() {
-        Drawable drawable = ivPath.getDrawable();
-
-        if (drawable != null && drawable instanceof Animatable)
-            ((Animatable) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawableCompat)
-            ((AnimatedVectorDrawableCompat) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawable)
-            ((AnimatedVectorDrawable) drawable).start();
+        return list;
     }
 
     @Override

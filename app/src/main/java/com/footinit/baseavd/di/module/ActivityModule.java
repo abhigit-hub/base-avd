@@ -2,14 +2,18 @@ package com.footinit.baseavd.di.module;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 
 import com.footinit.baseavd.di.ActivityContext;
 import com.footinit.baseavd.di.PerActivity;
+import com.footinit.baseavd.ui.main.MainListAdapter;
 import com.footinit.baseavd.ui.main.MainMvpPresenter;
 import com.footinit.baseavd.ui.main.MainMvpView;
 import com.footinit.baseavd.ui.main.MainPresenter;
 import com.footinit.baseavd.utils.rx.AppSchedulerProvider;
 import com.footinit.baseavd.utils.rx.SchedulerProvider;
+
+import java.util.ArrayList;
 
 import dagger.Module;
 import dagger.Provides;
@@ -50,8 +54,19 @@ public class ActivityModule {
     }
 
     @Provides
+    LinearLayoutManager provideLinearLayoutManager() {
+        return new LinearLayoutManager(activity);
+    }
+
+    @Provides
     @PerActivity
     MainMvpPresenter<MainMvpView> providesMainPresenter(MainPresenter<MainMvpView> presenter) {
         return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    MainListAdapter providesMainAdapter() {
+        return new MainListAdapter(new ArrayList<>());
     }
 }
