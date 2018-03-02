@@ -1,5 +1,5 @@
 # Android's Animated Vector Drawable : base-avd
-Collection of a few interesting animations, particularly Android's Animated Vector Drawable
+My playground to have fun with Android's Animated Vector Drawable
 
 ## Topics
 - [Glimpse](#glimpse)
