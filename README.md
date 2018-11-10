@@ -10,6 +10,8 @@ My playground to have fun with Android's Animated Vector Drawable
 
 ![Chrome](https://imgur.com/OO6Vqco.gif)
 ![Briefcase](https://imgur.com/vt6a9eX.gif)
+![Start Tracking](https://imgur.com/QetPGsv.gif)
+![Stop Tracking](https://imgur.com/FV2vFpG.gif)
 ![Tea](https://imgur.com/3PXgiOb.gif)
 ![Path](https://imgur.com/kY4jMpy.gif)
 
