@@ -76,6 +76,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
         list.add(getResources().getDrawable(R.drawable.avd_browser_enhanced));
         list.add(getResources().getDrawable(R.drawable.avd_briefcase));
+        list.add(getResources().getDrawable(R.drawable.avd_start_tracking));
+        list.add(getResources().getDrawable(R.drawable.avd_stop_tracking));
         list.add(getResources().getDrawable(R.drawable.avd_path));
         list.add(getResources().getDrawable(R.drawable.avd_tea));
 
