@@ -78,6 +78,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         list.add(getResources().getDrawable(R.drawable.avd_briefcase));
         list.add(getResources().getDrawable(R.drawable.avd_start_tracking));
         list.add(getResources().getDrawable(R.drawable.avd_stop_tracking));
+        list.add(getResources().getDrawable(R.drawable.avd_left));
+        list.add(getResources().getDrawable(R.drawable.avd_right));
         list.add(getResources().getDrawable(R.drawable.avd_path));
         list.add(getResources().getDrawable(R.drawable.avd_tea));
 

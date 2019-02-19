@@ -1,9 +1,7 @@
 package com.footinit.baseavd.ui.main;
 
 import android.graphics.drawable.Animatable;
-import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -92,11 +90,6 @@ public class MainListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     private void animateDrawable(Drawable drawable) {
-        if (drawable != null && drawable instanceof Animatable)
-            ((Animatable) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawableCompat)
-            ((AnimatedVectorDrawableCompat) drawable).start();
-        else if (drawable instanceof AnimatedVectorDrawable)
-            ((AnimatedVectorDrawable) drawable).start();
+        ((Animatable) drawable).start();
     }
 }
