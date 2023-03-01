@@ -1,7 +1,7 @@
 package com.footinit.baseavd.ui
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.footinit.baseavd.R
 
 class MainActivity: AppCompatActivity() {

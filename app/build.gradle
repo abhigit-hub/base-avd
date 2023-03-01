@@ -1,71 +1,43 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk 32
+
     defaultConfig {
         applicationId "com.footinit.baseavd"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    // android support libraries
-    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
-    implementation "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
-    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
-
-    // font
-    implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
-
-    // image
-    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
-
-    // parser
-    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
-
-    // dependency injection
-    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
-    compileOnly 'javax.annotation:jsr250-api:1.0'
-    implementation 'javax.inject:javax.inject:1'
-
-    // reactive
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
-
-    // code generator for view
-    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
