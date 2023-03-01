@@ -10,8 +10,16 @@ import com.footinit.baseavd.R
 import com.footinit.baseavd.databinding.ItemAvdBinding
 
 
-class MainListAdapter: RecyclerView.Adapter<MainListAdapter.MainViewHolder>() {
+class MainGridAdapter(private var callback: Callback?): RecyclerView.Adapter<MainGridAdapter.MainViewHolder>() {
     private val avdList = mutableListOf<Drawable>()
+
+    fun setCallback(callback: Callback) {
+        this.callback = callback
+    }
+
+    fun removeCallback() {
+        this.callback = null
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         return MainViewHolder(
@@ -51,5 +59,9 @@ class MainListAdapter: RecyclerView.Adapter<MainListAdapter.MainViewHolder>() {
 
     private fun animateDrawable(drawable: Drawable) {
         (drawable as Animatable).start()
+    }
+
+    interface Callback {
+        fun onItemSelected(id: Int, message: String)
     }
 }
