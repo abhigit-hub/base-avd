@@ -15,6 +15,16 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         AppCompatResources.getDrawable(application, R.drawable.avd_briefcase)!!,
         AppCompatResources.getDrawable(application, R.drawable.avd_start_tracking)!!,
         AppCompatResources.getDrawable(application, R.drawable.avd_stop_tracking)!!,
+
+        AppCompatResources.getDrawable(application, R.drawable.avd_clear_sky)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_overcast)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_drizzle)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_rain)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_heavy_rain)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_foggy)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_snowfall)!!,
+        AppCompatResources.getDrawable(application, R.drawable.avd_thunderstorm)!!,
+
         AppCompatResources.getDrawable(application, R.drawable.avd_left)!!,
         AppCompatResources.getDrawable(application, R.drawable.avd_right)!!,
         AppCompatResources.getDrawable(application, R.drawable.avd_path)!!,
